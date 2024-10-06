@@ -43,11 +43,12 @@ function App() {
       <div>
         <div id="background" className="w-full">
           <img src={mydata[count].url} alt="" className='absolute h-screen w-full' />
-          <div id="slidersContainer" className="flex px-5 relative z-10 translate-y-[750px]">
+          <div id="overlay" className='w-full h-screen fixed bg-gradient-to-t from-gray-800 to-transparent'></div>
+          <div id="slidersContainer" className="flex px-5 relative z-10 translate-y-[750px] ">
 
             <div
               id="buttons"
-              className="w-[10%] flex flex-col items-center justify-center min-w-[150px] gap-[10px] bg-white bg-opacity-5"
+              className="w-[10%] flex flex-col items-center justify-center min-w-[150px] gap-[10px]"
             >
               <div className='flex gap-5'>
                 <button
