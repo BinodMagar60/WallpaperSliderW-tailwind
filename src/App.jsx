@@ -79,7 +79,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div >
         <div id="background" className="w-full relative">
           <img src={mydata[count].url} alt="" className='absolute  w-full' />
           <div id="overlay" className='w-full h-screen fixed'style={{
