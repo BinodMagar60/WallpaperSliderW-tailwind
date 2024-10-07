@@ -47,7 +47,7 @@ function App() {
     { id: 8, name: '8', url: './photo/8.jpg' },
     { id: 9, name: '9', url: './photo/9.jpg' },
     { id: 10, name: '10', url: './photo/10.jpg' },
-    { id: 11, name: '11', url: './photo/11.jpg' },
+    { id: 11, name: '11', url: './photo/11.png' },
     { id: 12, name: '12', url: './photo/12.jpg' },
     { id: 13, name: '13', url: './photo/13.jpg' },
     { id: 14, name: '14', url: './photo/14.jpg' },
@@ -57,6 +57,23 @@ function App() {
     { id: 18, name: '18', url: './photo/18.png' },
     { id: 19, name: '19', url: './photo/19.png' },
     { id: 20, name: '20', url: './photo/20.jpg' },
+    { id: 21, name: '21', url: './photo/21.png' },
+    { id: 22, name: '22', url: './photo/22.png' },
+    { id: 23, name: '23', url: './photo/23.png' },
+    { id: 24, name: '24', url: './photo/24.png' },
+    { id: 25, name: '25', url: './photo/25.png' },
+    { id: 26, name: '26', url: './photo/26.png' },
+    { id: 27, name: '27', url: './photo/27.png' },
+    { id: 28, name: '28', url: './photo/28.png' },
+    { id: 29, name: '29', url: './photo/29.png' },
+    { id: 30, name: '30', url: './photo/30.png' },
+    { id: 31, name: '31', url: './photo/31.png' },
+    { id: 32, name: '32', url: './photo/32.png' },
+    { id: 33, name: '33', url: './photo/33.png' },
+    { id: 34, name: '34', url: './photo/34.png' },
+    { id: 35, name: '35', url: './photo/35.png' },
+
+
   ];
 
   return (
@@ -65,14 +82,16 @@ function App() {
         <div id="background" className="w-full relative">
           <img src={mydata[count].url} alt="" className='absolute  w-full' />
           <div id="overlay" className='w-full h-screen fixed'style={{
-        background: 'linear-gradient(to top, #2e2c2c88 0%, #5c525238 40%, transparent 100%)',
+        background: 'linear-gradient(to top, #2e2c2faa 0%, #5c525266 40%, transparent 100%)',
       }} ></div>
-          <div id="slidersContainer" className="flex px-5 absolute top-[900px] z-10  ">
-
+          <div id="slidersContainer" className="flex px-5 fixed top-[700px] z-10  ">
+            {/* buttons */}
             <div
               id="buttons"
               className="w-[10%] flex flex-col items-center justify-center min-w-[150px] gap-[10px]"
             >
+
+              {/* left side */}
               <div className='flex gap-5'>
                 <button
                 className="border-2 border-white p-2 rounded-full bg-slate-200 bg-opacity-5 fill-white hover:bg-slate-300 hover:bg-opacity-15 transition ease-in-out duration-300"
@@ -86,6 +105,8 @@ function App() {
                   <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6v256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z" />
                 </svg>
               </button>
+
+              {/* right side */}
               <button
                 className={`border-2 border-white p-2 rounded-full bg-slate-200 bg-opacity-5 fill-white hover:bg-slate-300 hover:bg-opacity-15 transition ease-in-out duration-300 ${count===0? "disabled opacity-0 cursor-default":"cursor-pointer"}`}
                 onClick={right}
@@ -107,14 +128,14 @@ function App() {
               </a>
             </div>
 
-            <div id="sliders" className="flex gap-6 overflow-hidden w-[90%]">
+            <div id="sliders" className="flex gap-[22px] overflow-hidden w-[90%]">
               {mydata.map((item, index) => (
                 <img
                   key={index}
                   ref={(el) => (refs.current[index] = el)} 
                   src={item.url}
                   alt={`Photo no.` + item.id}
-                  className="w-[220px] transition-transform duration-500 ease-in-out" 
+                  className="w-[220px] transition-transform duration-500 ease-in-out rounded-lg" 
                   style={{ transform: `translateX(${translateX}px)` }}
                 />
               ))}
